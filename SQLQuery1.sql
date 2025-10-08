@@ -1,43 +1,142 @@
-INSERT INTO uf VALUES('SP', 'São Paulo')
-INSERT INTO cidade VALUES('São José do Rio Preto', 'SP')
-INSERT INTO cep VALUES('15047173', 3)
-INSERT INTO pessoa VALUES('Zezin', 'Rua das Andorinhas, Jardim América', 'zezin@gmail.com', '51981666867', '15047173')
-INSERT INTO pessoa VALUES('Zezao', 'Rua da Andorinha, Jardim Américano', 'zezao@gmail.com', '51981666869', '15047173')
-INSERT INTO telefone VALUES('17381824835', 7)
-INSERT INTO cliente VALUES(4, 7)
-INSERT INTO funcionario VALUES(2002.03, 7)
-INSERT INTO entregador VALUES(50.60, 9)
-INSERT INTO entrega VALUES('a caminho', '2001-09-11', '00:00:00', 16)
-INSERT INTO fabricante VALUES('cocacola')
-INSERT INTO bebidas VALUES('coca cola', 600, 04.50, 1)
-INSERT INTO categoria VALUES('hamburguer')
-INSERT INTO lanches VALUES(5000, 'bigmac', 50.00, 1)
-INSERT INTO pedido VALUES('2001-09-11', 'pronto', 54.50, 2, 3)
-INSERT INTO lanche_pedido VALUES(1, 2, 1)
-INSERT INTO bebida_pedido VALUES(2, 2, 1)
+CREATE DATABASE VALTER_08OUT
+USE valter_08out
+CREATE TABLE Vendas08OUT (
+    ProdutoID INT NOT NULL,
+    DescricaoProduto VARCHAR(255),
+    PrecoProduto DECIMAL(10, 2),
+    NomeVendedor VARCHAR(100),
+    EstadoVendedor CHAR(2),
+    RendaMensalVendedor DECIMAL(10, 2)
+    CONSTRAINT pk_produto PRIMARY KEY (ProdutoID)
+)
+INSERT INTO Vendas08OUT (ProdutoID, DescricaoProduto, PrecoProduto, NomeVendedor, EstadoVendedor, RendaMensalVendedor) VALUES
+(101, 'Notebook Gamer Avançado', 7500.00, 'Carlos Silva', 'SP', 8200.00),
+(102, 'Mouse Óptico sem Fio', 120.50, 'Ana Pereira', 'RJ', 5500.00),
+(103, 'Teclado Mecânico RGB', 350.75, 'João Mendes', 'MG', 6100.00),
+(104, 'Monitor LED 27 polegadas', 1800.00, 'Maria Oliveira', 'SP', 7800.00),
+(105, 'Cadeira Gamer Ergonômica', 1200.00, 'Carlos Silva', 'SP', 82000.00),
+(106, 'Headset 7.1 Surround', 450.00, 'Fernanda Costa', 'BA', 4900.00),
+(107, 'SSD 1TB NVMe', 899.90, 'Ana Pereira', 'RJ', 5500.00),
+(108, 'Webcam Full HD 1080p', 250.00, 'Ricardo Alves', 'PR', 6300.00),
+(109, 'Mesa Digitalizadora', 680.00, 'Maria Oliveira', 'SP', 7800.00),
+(110, 'Impressora Multifuncional', 950.00, 'João Mendes', 'MG', 6100.00),
+(111, 'Roteador Wi-Fi 6 Mesh', 780.00, 'Beatriz Lima', 'RS', 7100.00),
+(112, 'Placa de Vídeo RTX 4060', 4200.00, 'Lucas Martins', 'SC', 9500.00),
+(113, 'Memória RAM 16GB DDR5', 600.00, 'Carlos Silva', 'SP', 8200.00),
+(114, 'Fonte de Alimentação 750W', 550.00, 'Ana Pereira', 'RJ', 5500.00),
+(115, 'Gabinete Mid Tower', 400.00, 'Fernanda Costa', 'BA', 4900.00),
+(116, 'Cooler para Processador', 280.00, 'Ricardo Alves', 'PR', 6300.00),
+(117, 'Placa-mãe AM5', 1300.00, 'Lucas Martins', 'SC', 9500.00),
+(118, 'HD Externo 2TB', 450.00, 'Beatriz Lima', 'RS', 7100.00),
+(119, 'Caixa de Som Bluetooth', 320.00, 'João Mendes', 'MG', 6100.00),
+(120, 'Filtro de Linha 8 Tomadas', 95.00, 'Maria Oliveira', 'SP', 7800.00),
+(121, 'Notebook Ultra Fino', 5200.00, 'Carlos Silva', 'SP', 8200.00),
+(122, 'Mousepad Gamer GG', 150.00, 'Ana Pereira', 'RJ', 5500.00),
+(123, 'Teclado sem Fio Compacto', 210.00, 'Ricardo Alves', 'PR', 6300.00),
+(124, 'Monitor Curvo 32 polegadas', 2500.00, 'Lucas Martins', 'SC', 9500.00),
+(125, 'Cadeira de Escritório', 900.00, 'Fernanda Costa', 'BA', 4900.00),
+(126, 'Headset com Cancelamento de Ruído', 650.00, 'Beatriz Lima', 'RS', 7100.00),
+(127, 'SSD Externo 500GB', 550.00, 'João Mendes', 'MG', 6100.00),
+(128, 'Microfone Condensador USB', 480.00, 'Maria Oliveira', 'SP', 7800.00),
+(129, 'Tablet 10 polegadas', 1500.00, 'Carlos Silva', 'SP', 8200.00),
+(130, 'Smartwatch', 1100.00, 'Ana Pereira', 'RJ', 5500.00),
+(131, 'Projetor HD', 2200.00, 'Lucas Martins', 'SC', 9500.00),
+(132, 'Placa de Vídeo RTX 4070', 6800.00, 'Lucas Martins', 'SC', 9500.00),
+(133, 'Memória RAM 8GB DDR4', 250.00, 'Fernanda Costa', 'BA', 4900.00),
+(134, 'Fonte de Alimentação 550W', 380.00, 'Ricardo Alves', 'PR', 6300.00),
+(135, 'Gabinete Full Tower', 800.00, 'Carlos Silva', 'SP', 8200.00),
+(136, 'Water Cooler 240mm', 700.00, 'Lucas Martins', 'SC', 9500.00),
+(137, 'Placa-mãe B550', 950.00, 'João Mendes', 'MG', 6100.00),
+(138, 'HD Interno 4TB', 600.00, 'Beatriz Lima', 'RS', 7100.00),
+(139, 'Home Theater 5.1', 1800.00, 'Maria Oliveira', 'SP', 7800.00),
+(140, 'No-break 1200VA', 650.00, 'Ana Pereira', 'RJ', 5500.00),
+(141, 'Notebook Corporativo', 4800.00, 'Ricardo Alves', 'PR', 6300.00),
+(142, 'Mouse Vertical Ergonômico', 180.00, 'Fernanda Costa', 'BA', 4900.00),
+(143, 'Teclado Numérico USB', 80.00, 'João Mendes', 'MG', 6100.00),
+(144, 'Monitor Portátil 15 polegadas', 1100.00, 'Carlos Silva', 'SP', 8200.00),
+(145, 'Suporte para Monitor', 200.00, 'Maria Oliveira', 'SP', 7800.00),
+(146, 'Fone de Ouvido Bluetooth', 300.00, 'Ana Pereira', 'RJ', 5500.00),
+(147, 'SSD 2TB SATA', 1200.00, 'Lucas Martins', 'SC', 9500.00),
+(148, 'Webcam 4K', 850.00, 'Beatriz Lima', 'RS', 7100.00),
+(149, 'Capa para Notebook', 120.00, 'Fernanda Costa', 'BA', 4900.00),
+(150, 'Scanner de Mesa', 750.00, 'Ricardo Alves', 'PR', 6300.00),
+(151, 'Processador Core i7', 2800.00, 'Lucas Martins', 'SC', 9500.00),
+(152, 'Mouse Gamer com Fio', 220.00, 'Carlos Silva', 'SP', 8200.00),
+(153, 'Teclado de Membrana', 120.00, 'João Mendes', 'MG', 6100.00),
+(154, 'Monitor Ultrawide 29 polegadas', 2100.00, 'Maria Oliveira', 'SP', 7800.00),
+(155, 'Apoio para Pés', 150.00, 'Ana Pereira', 'RJ', 5500.00),
+(156, 'Headset Básico com Microfone', 90.00, 'Fernanda Costa', 'BA', 4900.00),
+(157, 'Pen Drive 128GB', 110.00, 'Ricardo Alves', 'PR', 6300.00),
+(158, 'Câmera de Segurança Wi-Fi', 350.00, 'Beatriz Lima', 'RS', 7100.00),
+(159, 'Kindle Paperwhite', 599.00, 'Carlos Silva', 'SP', 8200.00),
+(160, 'Echo Dot (Alexa)', 349.00, 'Maria Oliveira', 'SP', 7800.00),
+(161, 'Chromecast 4K', 450.00, 'Ana Pereira', 'RJ', 5500.00),
+(162, 'Processador Ryzen 7', 2500.00, 'Lucas Martins', 'SC', 9500.00),
+(163, 'Memória RAM 32GB DDR5', 1100.00, 'Lucas Martins', 'SC', 9500.00),
+(164, 'Fonte de Alimentação 1000W', 950.00, 'Carlos Silva', 'SP', 8200.00),
+(165, 'Gabinete Compacto Mini-ITX', 500.00, 'João Mendes', 'MG', 6100.00),
+(166, 'Cooler Fan RGB (Kit com 3)', 180.00, 'Ricardo Alves', 'PR', 6300.00),
+(167, 'Placa-mãe Z790', 2200.00, 'Lucas Martins', 'SC', 9500.00),
+(168, 'HD Externo 5TB', 850.00, 'Beatriz Lima', 'RS', 7100.00),
+(169, 'Soundbar com Subwoofer', 1300.00, 'Maria Oliveira', 'SP', 7800.00),
+(170, 'Bateria Externa 20000mAh', 250.00, 'Ana Pereira', 'RJ', 5500.00),
+(171, 'Notebook 2 em 1 Touchscreen', 6300.00, 'Carlos Silva', 'SP', 8200.00),
+(172, 'Mousepad de Couro', 180.00, 'Fernanda Costa', 'BA', 4900.00),
+(173, 'Teclado Ergonômico Dividido', 550.00, 'Ricardo Alves', 'PR', 6300.00),
+(174, 'Monitor 4K 28 polegadas', 3200.00, 'Lucas Martins', 'SC', 9500.00),
+(175, 'Mesa com Regulagem de Altura', 2000.00, 'Maria Oliveira', 'SP', 7800.00),
+(176, 'Fone de Ouvido Esportivo', 250.00, 'Ana Pereira', 'RJ', 5500.00),
+(177, 'SSD M.2 500GB', 450.00, 'João Mendes', 'MG', 6100.00),
+(178, 'Ring Light', 180.00, 'Beatriz Lima', 'RS', 7100.00),
+(179, 'Leitor de Cartão de Memória', 70.00, 'Fernanda Costa', 'BA', 4900.00),
+(180, 'Fragmentadora de Papel', 400.00, 'Ricardo Alves', 'PR', 6300.00),
+(181, 'Processador Core i9', 4500.00, 'Lucas Martins', 'SC', 9500.00),
+(182, 'Mouse de Viagem', 80.00, 'Carlos Silva', 'SP', 8200.00),
+(183, 'Kit Teclado e Mouse', 280.00, 'João Mendes', 'MG', 6100.00),
+(184, 'Monitor Gamer 144Hz', 2300.00, 'Maria Oliveira', 'SP', 7800.00),
+(185, 'Tapete Ergonômico', 300.00, 'Ana Pereira', 'RJ', 5500.00),
+(186, 'Microfone de Lapela', 120.00, 'Fernanda Costa', 'BA', 4900.00),
+(187, 'Pen Drive 256GB', 200.00, 'Ricardo Alves', 'PR', 6300.00),
+(188, 'Lâmpada Inteligente Wi-Fi', 95.00, 'Beatriz Lima', 'RS', 7100.00),
+(189, 'Smart TV 55 polegadas 4K', 3800.00, 'Carlos Silva', 'SP', 8200.00),
+(190, 'Fire TV Stick', 299.00, 'Maria Oliveira', 'SP', 7800.00),
+(191, 'Controle Universal Inteligente', 150.00, 'Ana Pereira', 'RJ', 5500.00),
+(192, 'Processador Ryzen 9', 4200.00, 'Lucas Martins', 'SC', 9500.00),
+(193, 'Memória RAM 64GB DDR5', 2100.00, 'Lucas Martins', 'SC', 9500.00),
+(194, 'Fonte Modular 850W', 780.00, 'Carlos Silva', 'SP', 8200.00),
+(195, 'Gabinete Branco com Vidro', 600.00, 'João Mendes', 'MG', 6100.00),
+(196, 'Hub USB-C 7 em 1', 320.00, 'Ricardo Alves', 'PR', 6300.00),
+(197, 'Placa de Captura de Vídeo', 900.00, 'Lucas Martins', 'SC', 9500.00),
+(198, 'HD Externo 8TB', 1500.00, 'Beatriz Lima', 'RS', 7100.00),
+(199, 'Sistema de Som 2.1', 550.00, 'Maria Oliveira', 'SP', 7800.00),
+(200, 'Carregador sem Fio', 180.00, 'Ana Pereira', 'RJ', 5500.00);
 
-ALTER TABLE bebidas ALTER COLUMN preco numeric(4,2)
-ALTER TABLE lanches ALTER COLUMN preco numeric(4,2)
-ALTER TABLE pedido ALTER COLUMN total numeric(4,2)
+SELECT * FROM vendas08out -- isso é passado
+--ALIASING
+SELECT COUNT(*) AS TotalDeRegistros FROM Vendas08out
+SELECT TOP 10 * FROM Vendas08out
+SELECT DescricaoProduto AS 'Nome do Produto',
+	   PrecoProduto AS 'Preço' FROM Vendas08out
+SELECT DescricaoProduto AS 'Nome Produto', 
+	   PrecoProduto AS 'Preço' FROM Vendas08out	
+	   WHERE PrecoProduto > 2000
+--ordenações - utilizar ORDER BY 
+--ordenação dos produtos mais baratos para mais caros
+SELECT DescricaoProduto, PrecoProduto FROM vendas08out
+		ORDER BY PrecoProduto
+--order by funciona para números e nome ASC ou DESC
+SELECT * FROM vendas08out ORDER BY NomeVendedor DESC
+--order by em + de uma coluna
+SELECT	NomeVendedor, 		DescricaoProduto, 
+		PrecoProduto,		EstadoVendedor
+FROM    Vendas08out
+ORDER BY 	NomeVendedor ASC, --(A-Z)
+			PrecoProduto DESC; --(MAIOR-MENOR)
+--Lista das vendas que ocorreram nos estados RJ e BA (IN)
+								--IN CORRESPONDENCIA EXATA
+SELECT * FROM Vendas08out WHERE EstadoVendedor IN('RJ')
 
-SELECT * FROM uf
-SELECT * FROM cidade
-SELECT * FROM cep
-SELECT * FROM pessoa
-SELECT * FROM telefone
-SELECT * FROM cliente
-SELECT * FROM funcionario
-SELECT * FROM entregador
-SELECT * FROM entrega
-SELECT * FROM fabricante
-SELECT * FROM bebidas
-SELECT * FROM categoria
-SELECT * FROM lanches
-SELECT * FROM pedido
-SELECT * FROM bebida_pedido
-SELECT * FROM lanche_pedido
-
-
+	   	
 
 
 
